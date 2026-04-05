@@ -91,31 +91,40 @@
         .product-card { 
             position: relative;
             background: var(--glass); border: 1px solid #1a1a1a; border-radius: 15px; 
-            padding: 30px 20px; text-align: center; transition: 0.4s; backdrop-filter: blur(5px);
+            padding: 25px; text-align: center; transition: 0.4s; backdrop-filter: blur(5px);
             display: flex; flex-direction: column; justify-content: space-between;
         }
 
         .product-card:hover { border-color: var(--rrx-red); box-shadow: 0 0 30px rgba(255, 0, 0, 0.15); transform: translateY(-10px); }
 
-        /* Badge Styles */
         .badge {
             position: absolute; top: 15px; right: 15px;
             padding: 5px 12px; font-size: 11px; font-weight: bold; border-radius: 4px; font-family: 'Orbitron', sans-serif;
+            z-index: 2;
         }
         .stock-out { background: #333; color: #888; border: 1px solid #444; }
         .offer-tag { background: var(--rrx-red); color: white; box-shadow: 0 0 15px var(--rrx-red); border: 1px solid white; }
 
+        /* Updated Image Box to show real images */
         .img-box { 
-            background: linear-gradient(45deg, #0a0a0a, #1a1a1a); height: 180px; 
-            border-radius: 10px; display: flex; align-items: center; justify-content: center; 
-            margin-bottom: 20px; color: #222; font-size: 30px; font-weight: 800; border: 1px solid #222; 
+            background: #0a0a0a; height: 200px; 
+            border-radius: 10px; overflow: hidden;
+            margin-bottom: 20px; border: 1px solid #222;
+            display: flex; align-items: center; justify-content: center;
         }
 
-        .product-name { font-size: 20px; font-weight: 700; margin-bottom: 12px; color: #fff; min-height: 60px; line-height: 1.4; }
+        .img-box img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .product-card:hover .img-box img { transform: scale(1.1); }
+
+        .product-name { font-size: 19px; font-weight: 700; margin-bottom: 12px; color: #fff; min-height: 55px; line-height: 1.4; }
         .price { font-size: 28px; color: var(--rrx-red); font-weight: bold; margin-bottom: 20px; }
 
         .rrx-btn {
-            position: relative; padding: 15px 30px; background: transparent;
+            padding: 15px 30px; background: transparent;
             border: 2px solid var(--rrx-red); color: white; font-family: 'Orbitron', sans-serif;
             font-size: 14px; font-weight: bold; cursor: pointer; transition: 0.3s;
         }
@@ -132,9 +141,7 @@
     <div id="welcome-overlay">
         <div class="welcome-card">
             <h2>RRX STUDIOS</h2>
-            <p>
-                আপনার বিশ্বস্ত গেমিং মার্কেটপ্লেস, যেখানে পাবেন জনপ্রিয় গেম, ইন-গেম আইটেম এবং এক্সক্লুসিভ অফার। দ্রুত ডেলিভারি, সিকিউর লেনদেন এবং সহজ পেমেন্ট সুবিধা (বিকাশ ও নগদ)।
-            </p>
+            <p>আপনার বিশ্বস্ত গেমিং মার্কেটপ্লেস, যেখানে পাবেন জনপ্রিয় গেম, ইন-গেম আইটেম এবং এক্সক্লুসিভ অফার। দ্রুত ডেলিভারি, সিকিউর লেনদেন এবং সহজ পেমেন্ট সুবিধা (বিকাশ ও নগদ)।</p>
             <span class="highlight">আপনার বিশ্বাস, আমাদের আমানত।</span>
             <p style="font-size: 14px; color: var(--rrx-red); letter-spacing: 3px;">YOUR AURA, YOUR RULES 🎮🔥</p>
             <button class="continue-btn" onclick="enterSite()">Enter RRX CORE</button>
@@ -154,7 +161,9 @@
         <div class="grid">
             <div class="product-card">
                 <div class="badge offer-tag">OFFER (STOCK OUT)</div>
-                <div class="img-box">RRX-01</div>
+                <div class="img-box">
+                    <img src="mccombo.png" alt="Minecraft Combo">
+                </div>
                 <h3 class="product-name">Minecraft Java + Bedrock Edition (Combo) | Microsoft Account</h3>
                 <div class="price">৳ 2,000</div>
                 <button class="rrx-btn" disabled>GET NOW</button>
@@ -162,7 +171,9 @@
 
             <div class="product-card">
                 <div class="badge stock-out">OUT OF STOCK</div>
-                <div class="img-box">RRX-02</div>
+                <div class="img-box">
+                    <img src="gtav.png" alt="GTA V">
+                </div>
                 <h3 class="product-name">Grand Theft Auto 5 | GTA V – Online Premium Edition | Rockstar Redeem Key</h3>
                 <div class="price">৳ 2,100</div>
                 <button class="rrx-btn" disabled>GET NOW</button>
@@ -170,7 +181,9 @@
 
             <div class="product-card">
                 <div class="badge offer-tag">OFFER (STOCK OUT)</div>
-                <div class="img-box">RRX-03</div>
+                <div class="img-box">
+                    <img src="forza.png" alt="Forza Horizon 5">
+                </div>
                 <h3 class="product-name">Forza Horizon 5 – Premium Edition | Steam Account</h3>
                 <div class="price">৳ 3,999</div>
                 <button class="rrx-btn" disabled>GET NOW</button>
