@@ -20,7 +20,7 @@
         #welcome-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.92);
+            background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(20px);
             z-index: 9999;
             display: flex; justify-content: center; align-items: center;
@@ -62,78 +62,85 @@
         }
 
         .hero {
-            height: 60vh; display: flex; flex-direction: column; justify-content: center;
+            height: 50vh; display: flex; flex-direction: column; justify-content: center;
             align-items: center; text-align: center;
-            background: radial-gradient(circle, rgba(255, 0, 0, 0.15) 0%, rgba(0,0,0,1) 80%);
+            background: radial-gradient(circle, rgba(255, 0, 0, 0.1) 0%, rgba(0,0,0,1) 80%);
             padding: 20px;
         }
 
         .hero h1 {
-            font-family: 'Orbitron', sans-serif; font-size: clamp(45px, 12vw, 90px);
+            font-family: 'Orbitron', sans-serif; font-size: clamp(40px, 10vw, 80px);
             background: linear-gradient(to bottom, #fff 40%, var(--rrx-red));
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
 
         .aura-text {
-            font-family: 'Orbitron', sans-serif; font-size: clamp(14px, 4vw, 22px);
-            color: #fff; letter-spacing: 5px; text-transform: uppercase;
+            font-family: 'Orbitron', sans-serif; font-size: clamp(14px, 4vw, 20px);
+            color: #fff; letter-spacing: 4px; text-transform: uppercase;
             font-weight: 700; margin-top: 10px; animation: aura-glow 3s ease-in-out infinite;
         }
 
         @keyframes aura-glow {
-            0%, 100% { text-shadow: 0 0 5px var(--rrx-red), 0 0 10px var(--rrx-red); opacity: 0.7; transform: scale(1); }
-            50% { text-shadow: 0 0 25px var(--rrx-red), 0 0 50px var(--rrx-red); opacity: 1; transform: scale(1.05); }
+            0%, 100% { text-shadow: 0 0 5px var(--rrx-red); opacity: 0.7; }
+            50% { text-shadow: 0 0 20px var(--rrx-red); opacity: 1; transform: scale(1.02); }
         }
 
         /* --- Product Grid --- */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; padding: 60px 5%; max-width: 1400px; margin: 0 auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; padding: 40px 5% 80px 5%; max-width: 1400px; margin: 0 auto; }
         
         .product-card { 
             position: relative;
             background: var(--glass); border: 1px solid #1a1a1a; border-radius: 15px; 
             padding: 25px; text-align: center; transition: 0.4s; backdrop-filter: blur(5px);
-            display: flex; flex-direction: column; justify-content: space-between;
+            display: flex; flex-direction: column;
         }
 
         .product-card:hover { border-color: var(--rrx-red); box-shadow: 0 0 30px rgba(255, 0, 0, 0.15); transform: translateY(-10px); }
 
+        /* Badge Styles */
         .badge {
             position: absolute; top: 15px; right: 15px;
             padding: 5px 12px; font-size: 11px; font-weight: bold; border-radius: 4px; font-family: 'Orbitron', sans-serif;
-            z-index: 2;
+            z-index: 5;
         }
-        .stock-out { background: #333; color: #888; border: 1px solid #444; }
-        .offer-tag { background: var(--rrx-red); color: white; box-shadow: 0 0 15px var(--rrx-red); border: 1px solid white; }
+        .stock-out { background: #222; color: #777; border: 1px solid #333; }
+        .offer-tag { background: var(--rrx-red); color: white; box-shadow: 0 0 15px var(--rrx-red); border: 1px solid rgba(255,255,255,0.5); }
 
-        /* Updated Image Box to show real images */
+        /* --- Image Box with Proper Fit --- */
         .img-box { 
-            background: #0a0a0a; height: 200px; 
-            border-radius: 10px; overflow: hidden;
-            margin-bottom: 20px; border: 1px solid #222;
+            background: #050505; 
+            height: 250px; /* Fixed height for symmetry */
+            border-radius: 10px; 
+            overflow: hidden;
+            margin-bottom: 20px; 
+            border: 1px solid #111;
             display: flex; align-items: center; justify-content: center;
         }
 
         .img-box img {
-            width: 100%; height: 100%; object-fit: cover;
-            transition: 0.5s;
+            width: 100%; 
+            height: 100%; 
+            object-fit: contain; /* Ensures images fit without stretching */
+            transition: 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+            padding: 10px; /* Added padding to keep it clean */
         }
 
         .product-card:hover .img-box img { transform: scale(1.1); }
 
-        .product-name { font-size: 19px; font-weight: 700; margin-bottom: 12px; color: #fff; min-height: 55px; line-height: 1.4; }
-        .price { font-size: 28px; color: var(--rrx-red); font-weight: bold; margin-bottom: 20px; }
+        .product-name { font-size: 18px; font-weight: 700; margin-bottom: 15px; color: #fff; min-height: 50px; line-height: 1.4; }
+        .price { font-size: 28px; color: var(--rrx-red); font-weight: bold; margin-bottom: 20px; display: block; }
 
         .rrx-btn {
-            padding: 15px 30px; background: transparent;
-            border: 2px solid var(--rrx-red); color: white; font-family: 'Orbitron', sans-serif;
-            font-size: 14px; font-weight: bold; cursor: pointer; transition: 0.3s;
+            padding: 14px 25px; background: transparent;
+            border: 1px solid #333; color: #555; font-family: 'Orbitron', sans-serif;
+            font-size: 13px; font-weight: bold; cursor: not-allowed;
+            text-transform: uppercase; border-radius: 4px;
         }
-        .rrx-btn:disabled { border-color: #333; color: #444; cursor: not-allowed; }
 
-        footer { text-align: center; padding: 60px 20px; border-top: 1px solid #1a1a1a; color: #666; letter-spacing: 2px; font-size: 13px; }
-        footer span { color: var(--rrx-red); font-weight: bold; }
+        footer { text-align: center; padding: 60px 20px; border-top: 1px solid #1a1a1a; color: #444; letter-spacing: 2px; font-size: 12px; }
+        footer span { color: var(--rrx-red); }
 
-        @media (max-width: 768px) { .hero { height: 60vh; } }
+        @media (max-width: 768px) { .hero { height: 40vh; } .img-box { height: 200px; } }
     </style>
 </head>
 <body>
@@ -165,18 +172,18 @@
                     <img src="mccombo.png" alt="Minecraft Combo">
                 </div>
                 <h3 class="product-name">Minecraft Java + Bedrock Edition (Combo) | Microsoft Account</h3>
-                <div class="price">৳ 2,000</div>
-                <button class="rrx-btn" disabled>GET NOW</button>
+                <span class="price">৳ 2,000</span>
+                <button class="rrx-btn" disabled>OUT OF STOCK</button>
             </div>
 
             <div class="product-card">
                 <div class="badge stock-out">OUT OF STOCK</div>
                 <div class="img-box">
-                    <img src="gtav.png" alt="GTA V">
+                    <img src="gtav.png" alt="GTA V Online">
                 </div>
-                <h3 class="product-name">Grand Theft Auto 5 | GTA V – Online Premium Edition | Rockstar Redeem Key</h3>
-                <div class="price">৳ 2,100</div>
-                <button class="rrx-btn" disabled>GET NOW</button>
+                <h3 class="product-name">Grand Theft Auto 5 | GTA V – Online Premium Edition | Rockstar Key</h3>
+                <span class="price">৳ 2,100</span>
+                <button class="rrx-btn" disabled>OUT OF STOCK</button>
             </div>
 
             <div class="product-card">
@@ -185,8 +192,8 @@
                     <img src="forza.png" alt="Forza Horizon 5">
                 </div>
                 <h3 class="product-name">Forza Horizon 5 – Premium Edition | Steam Account</h3>
-                <div class="price">৳ 3,999</div>
-                <button class="rrx-btn" disabled>GET NOW</button>
+                <span class="price">৳ 3,999</span>
+                <button class="rrx-btn" disabled>OUT OF STOCK</button>
             </div>
         </div>
     </main>
