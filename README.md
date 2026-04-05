@@ -33,9 +33,9 @@
         ::-webkit-scrollbar-track { background: #000; }
         ::-webkit-scrollbar-thumb { background: var(--rrx-red); border-radius: 10px; }
 
-        /* --- Header & Branding --- */
+        /* --- Header --- */
         header {
-            padding: 15px 5%;
+            padding: 20px 5%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -59,7 +59,7 @@
 
         /* --- Hero Section --- */
         .hero {
-            height: 60vh;
+            height: 70vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -79,7 +79,6 @@
             filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.3));
         }
 
-        /* Aura Text with Breathing Animation */
         .aura-text {
             font-family: 'Orbitron', sans-serif;
             font-size: clamp(14px, 4vw, 22px);
@@ -129,7 +128,6 @@
             background: var(--rrx-red);
         }
 
-        /* Satisfying Burst on Click */
         .rrx-btn::after {
             content: '';
             position: absolute;
@@ -150,7 +148,7 @@
             opacity: 0.5;
         }
 
-        /* --- Product Grid --- */
+        /* --- Grid Layout --- */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -202,7 +200,6 @@
             color: var(--rrx-red);
             font-weight: bold;
             margin-bottom: 25px;
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
         }
 
         /* --- Footer --- */
@@ -210,9 +207,9 @@
             text-align: center;
             padding: 60px 20px;
             border-top: 1px solid #1a1a1a;
-            color: #444;
-            font-size: 14px;
+            color: #666;
             letter-spacing: 2px;
+            font-size: 13px;
             background: #020202;
         }
 
@@ -221,11 +218,11 @@
             font-weight: bold;
         }
 
-        /* --- Mobile Tweaks --- */
+        /* --- Mobile Responsiveness --- */
         @media (max-width: 768px) {
-            .hero { height: 50vh; }
+            .hero { height: 60vh; }
             .grid { padding: 40px 20px; }
-            .rrx-btn { width: 90%; padding: 15px; }
+            .rrx-btn { width: 100%; }
         }
     </style>
 </head>
@@ -235,37 +232,39 @@
         <div class="brand-name">RRX</div>
     </header>
 
-    <section class="hero">
-        <h1>RRX CORE</h1>
-        <p class="aura-text">YOUR AURA, YOUR RULES</p>
-        <button class="rrx-btn">ACCESS INVENTORY</button>
-    </section>
+    <main>
+        <section class="hero">
+            <h1>RRX CORE</h1>
+            <p class="aura-text">YOUR AURA, YOUR RULES</p>
+            <button class="rrx-btn">ACCESS INVENTORY</button>
+        </section>
 
-    <div class="grid">
-        <div class="product-card">
-            <div class="img-box">RRX-01</div>
-            <div class="product-name">SHADOW MOUSE</div>
-            <div class="price">৳ 2,500</div>
-            <button class="rrx-btn" style="padding: 12px 30px; font-size: 14px; margin-top: 0;">GET NOW</button>
-        </div>
+        <div class="grid">
+            <div class="product-card">
+                <div class="img-box">RRX-01</div>
+                <div class="product-name">SHADOW MOUSE</div>
+                <div class="price">৳ 2,500</div>
+                <button class="rrx-btn" style="padding: 12px 30px; font-size: 14px; margin-top: 0;">GET NOW</button>
+            </div>
 
-        <div class="product-card">
-            <div class="img-box">RRX-02</div>
-            <div class="product-name">IGNITE KEYBOARD</div>
-            <div class="price">৳ 4,800</div>
-            <button class="rrx-btn" style="padding: 12px 30px; font-size: 14px; margin-top: 0;">GET NOW</button>
-        </div>
+            <div class="product-card">
+                <div class="img-box">RRX-02</div>
+                <div class="product-name">IGNITE KEYBOARD</div>
+                <div class="price">৳ 4,800</div>
+                <button class="rrx-btn" style="padding: 12px 30px; font-size: 14px; margin-top: 0;">GET NOW</button>
+            </div>
 
-        <div class="product-card">
-            <div class="img-box">RRX-03</div>
-            <div class="product-name">VOID HEADSET</div>
-            <div class="price">৳ 3,500</div>
-            <button class="rrx-btn" style="padding: 12px 30px; font-size: 14px; margin-top: 0;">GET NOW</button>
+            <div class="product-card">
+                <div class="img-box">RRX-03</div>
+                <div class="product-name">VOID HEADSET</div>
+                <div class="price">৳ 3,500</div>
+                <button class="rrx-btn" style="padding: 12px 30px; font-size: 14px; margin-top: 0;">GET NOW</button>
+            </div>
         </div>
-    </div>
+    </main>
 
     <footer>
-        <p>&copy; 2026 <span>RRX</span> BRAND | POWERED BY AGENT HUMU</p>
+        <p>&copy; 2026 <span>RRX</span> BRAND | POWERED BY <span>RRX STUDIOS</span></p>
     </footer>
 
 </body>
