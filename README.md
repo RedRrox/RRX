@@ -32,6 +32,7 @@
         .welcome-card h2 { font-family: 'Orbitron', sans-serif; color: var(--rrx-red); margin-bottom: 25px; letter-spacing: 5px; font-size: 32px; }
         .welcome-card p { font-size: 19px; line-height: 1.8; color: #ccc; margin-bottom: 20px; }
         .welcome-card .highlight { color: var(--rrx-red); font-weight: 700; font-size: 24px; display: block; margin: 20px 0; letter-spacing: 1px; }
+        
         .continue-btn {
             background: transparent; border: 2px solid var(--rrx-red); color: white;
             padding: 16px 50px; font-family: 'Orbitron', sans-serif; font-weight: bold;
@@ -50,58 +51,40 @@
         .aura-text { font-family: 'Orbitron', sans-serif; font-size: clamp(14px, 4vw, 22px); color: #fff; letter-spacing: 5px; text-transform: uppercase; font-weight: 700; margin-top: 15px; animation: aura-glow 3s infinite; }
         @keyframes aura-glow { 0%, 100% { opacity: 0.7; } 50% { opacity: 1; text-shadow: 0 0 20px var(--rrx-red); } }
 
-        /* --- Discord Button (RRX STUDIOS Animation) --- */
+        /* --- Discord Button (Hero) --- */
         .discord-btn {
-            margin-top: 30px;
-            padding: 12px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.9rem;
-            font-family: 'Orbitron';
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: inline-flex;
-            align-items: center;
-            background: rgba(88, 101, 242, 0.1);
-            color: var(--discord);
-            border: 2px solid var(--discord);
+            margin-top: 30px; padding: 12px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.9rem; font-family: 'Orbitron';
+            text-transform: uppercase; letter-spacing: 2px; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: rgba(88, 101, 242, 0.1); color: var(--discord); border: 2px solid var(--discord);
         }
-        .discord-btn:hover {
-            background: var(--discord);
-            color: white;
-            box-shadow: 0 0 25px rgba(88, 101, 242, 0.5);
-            transform: translateY(-5px);
-        }
+        .discord-btn:hover { background: var(--discord); color: white; box-shadow: 0 0 25px rgba(88, 101, 242, 0.5); transform: translateY(-5px); }
 
         /* --- Grid --- */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; padding: 40px 5% 100px 5%; max-width: 1400px; margin: 0 auto; }
         .product-card { position: relative; background: var(--glass); border: 1px solid #1a1a1a; border-radius: 15px; padding: 30px 25px; text-align: center; transition: 0.4s; display: flex; flex-direction: column; justify-content: space-between; }
         .product-card:hover { border-color: var(--rrx-red); box-shadow: 0 0 30px rgba(255, 0, 0, 0.15); transform: translateY(-10px); }
-        .badge { position: absolute; top: 15px; right: 15px; padding: 5px 12px; font-size: 11px; font-weight: bold; border-radius: 4px; font-family: 'Orbitron'; }
-        .offer-tag { background: var(--rrx-red); color: white; box-shadow: 0 0 15px var(--rrx-red); }
         .img-box { background: #050505; height: 260px; border-radius: 12px; overflow: hidden; margin-bottom: 25px; border: 1px solid #111; display: flex; align-items: center; justify-content: center; }
         .img-box img { width: 100%; height: 100%; object-fit: contain; padding: 10px; }
         .price { font-size: 32px; color: var(--rrx-red); font-weight: bold; margin-bottom: 25px; display: block; }
-
         .buy-now-btn { background: var(--rrx-red); color: white; border: none; padding: 15px; font-family: 'Orbitron'; font-weight: bold; cursor: pointer; box-shadow: 0 0 15px var(--rrx-glow); transition: 0.3s; }
         .buy-now-btn:hover { box-shadow: 0 0 30px var(--rrx-red); transform: scale(1.02); }
 
-        /* --- Overlays --- */
+        /* --- Payment & Success Overlays --- */
         #payment-overlay, #success-overlay {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.98); z-index: 10001; padding: 40px 5%; overflow-y: auto;
         }
-        .payment-container { max-width: 500px; margin: 20px auto; background: #080808; border: 1px solid var(--rrx-red); border-radius: 20px; padding: 30px; text-align: left; }
+        .payment-container { max-width: 500px; margin: 20px auto; background: #080808; border: 1px solid var(--rrx-red); border-radius: 20px; padding: 30px; text-align: left; box-shadow: 0 0 40px rgba(255, 0, 0, 0.2); }
         .method-box { display: flex; gap: 15px; margin: 20px 0; }
         .method { flex: 1; padding: 15px; border: 1px solid #222; border-radius: 10px; text-align: center; }
         .method.active { border-color: var(--rrx-red); background: rgba(255, 0, 0, 0.1); }
-        input { width: 100%; padding: 15px; margin-bottom: 15px; background: #111; border: 1px solid #222; color: #fff; border-radius: 8px; }
-        .submit-btn { width: 100%; padding: 18px; background: var(--rrx-red); border: none; color: white; font-family: 'Orbitron'; font-weight: 800; cursor: pointer; border-radius: 8px; }
+        input { width: 100%; padding: 15px; margin-bottom: 15px; background: #111; border: 1px solid #222; color: #fff; border-radius: 8px; font-size: 16px; }
+        .submit-btn { width: 100%; padding: 18px; background: var(--rrx-red); border: none; color: white; font-family: 'Orbitron'; font-weight: 800; cursor: pointer; border-radius: 8px; box-shadow: 0 0 15px var(--rrx-glow); }
 
-        .success-card { text-align: center; max-width: 500px; margin: 100px auto; animation: popIn 0.5s; }
-        .check-icon { font-size: 80px; color: #00ff00; margin-bottom: 20px; }
+        /* --- Original Success Animation --- */
+        .success-card { text-align: center; max-width: 500px; margin: 100px auto; animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        @keyframes popIn { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .check-icon { font-size: 80px; color: #00ff00; text-shadow: 0 0 20px #00ff00; margin-bottom: 20px; }
 
         footer { text-align: center; padding: 60px; border-top: 1px solid #1a1a1a; color: #555; font-size: 13px; }
         footer span { color: var(--rrx-red); }
@@ -112,7 +95,7 @@
     <div id="welcome-overlay">
         <div class="welcome-card">
             <h2>RRX CORE</h2>
-            <p>আপনার বিশ্বস্ত গেমিং মার্কেটপ্লেস। দ্রুত ডেলিভারি এবং সিকিউর লেনদেনের নিশ্চয়তা।</p>
+            <p>আপনার বিশ্বস্ত গেমিং মার্কেটপ্লেস, যেখানে পাবেন জনপ্রিয় গেম, ইন-গেম আইটেম এবং এক্সক্লুসিভ অফার। দ্রুত ডেলিভারি, সিকিউর লেনদেন এবং সহজ পেমেন্ট সুবিধা (বিকাশ ও নগদ) নিয়ে আমরা প্রস্তুত।</p>
             <span class="highlight">আপনার বিশ্বাস, আমাদের আমানত।</span>
             <p style="font-size: 15px; color: var(--rrx-red); letter-spacing: 3px; font-family: 'Orbitron';">YOUR AURA, YOUR RULES </p>
             <button class="continue-btn" onclick="enterSite()">Enter RRX CORE</button>
@@ -121,12 +104,12 @@
 
     <div id="payment-overlay">
         <div class="payment-container">
-            <button onclick="closePayment()" style="background:none; border:none; color:#666; cursor:pointer; font-family:'Orbitron'; margin-bottom:20px;">[ BACK ]</button>
+            <button onclick="closePayment()" style="background:none; border:none; color:#666; cursor:pointer; font-family:'Orbitron'; margin-bottom:20px;">[ BACK TO STORE ]</button>
             <h2 style="font-family:'Orbitron'; color:var(--rrx-red);">CHECKOUT</h2>
             <p id="order-info" style="color:#eee; margin: 15px 0; font-weight:bold;"></p>
             <div class="method-box">
-                <div class="method active">bKash<br><small>01779772201</small></div>
-                <div class="method" style="opacity:0.4;">Nagad<br><small>SOON</small></div>
+                <div class="method active">bKash<br><small>Personal: 01779772201</small></div>
+                <div class="method" style="opacity:0.4;">Nagad<br><small>COMING SOON</small></div>
             </div>
             <form onsubmit="processPayment(event)">
                 <input type="text" placeholder="Your Name" required>
@@ -134,15 +117,22 @@
                 <input type="text" placeholder="bKash TrxID" required>
                 <button type="submit" class="submit-btn">CONFIRM ORDER</button>
             </form>
+            <p style="text-align:center; margin-top:15px; font-size:12px; color:#555;">যেকোনো সমস্যায় ডিসকর্ডে যোগাযোগ করুন।</p>
         </div>
     </div>
 
     <div id="success-overlay">
         <div class="success-card">
             <div class="check-icon">✓</div>
-            <h1 style="font-family:'Orbitron'; color:#00ff00;">ORDER SUCCESS!</h1>
-            <p style="font-size:18px; color:#ccc; margin: 20px 0;">ধন্যবাদ! ২৪ ঘণ্টার মধ্যে ডেলিভারি কমপ্লিট হবে।</p>
-            <button class="continue-btn" onclick="location.reload()">HOME</button>
+            <h1 style="font-family:'Orbitron'; color:#00ff00; letter-spacing:3px;">ORDER SUCCESSFUL!</h1>
+            <p style="font-size:20px; color:#ccc; margin: 20px 0; line-height:1.6;">
+                ধন্যবাদ! আপনার পেমেন্ট রিসিভ করা হয়েছে।<br>
+                <span style="color:var(--rrx-red); font-weight:bold; font-size:24px;">২৪ ঘণ্টার মধ্যে</span><br>
+                ডেলিভারি কমপ্লিট হয়ে যাবে।
+            </p>
+            <p style="color:#888; margin-bottom:20px;">যেকোনো প্রকার সমস্যায় আমাদের ডিসকর্ড সার্ভারে যোগাযোগ করুন।</p>
+            <a href="https://discord.gg/vGKpaZdFtt" target="_blank" style="text-decoration:none; color:var(--discord); font-weight:bold; font-family:'Orbitron';">[ DISCORD SUPPORT ]</a><br>
+            <button class="continue-btn" onclick="location.reload()" style="margin-top:30px;">BACK TO HOME</button>
         </div>
     </div>
 
@@ -154,30 +144,23 @@
         <section class="hero">
             <h1>RRX CORE</h1>
             <p class="aura-text">YOUR AURA, YOUR RULES</p>
-            <a href="https://discord.gg/vGKpaZdFtt" target="_blank" class="discord-btn">
-                Join Discord Server
-            </a>
+            <a href="https://discord.gg/vGKpaZdFtt" target="_blank" class="discord-btn">Join Discord Server</a>
         </section>
 
         <div class="grid">
             <div class="product-card">
-                <div class="badge offer-tag">AVAILABLE</div>
                 <div class="img-box"><img src="mccombo.png" alt="Minecraft"></div>
                 <h3 style="font-size:20px; min-height:55px;">Minecraft Java + Bedrock Combo</h3>
                 <span class="price">৳ 2,000</span>
                 <button class="buy-now-btn" onclick="openPayment('Minecraft Combo', '৳ 2,000')">BUY NOW</button>
             </div>
-
             <div class="product-card">
-                <div class="badge offer-tag">AVAILABLE</div>
                 <div class="img-box"><img src="gtav.png" alt="GTA V"></div>
                 <h3 style="font-size:20px; min-height:55px;">GTA V Premium Edition</h3>
                 <span class="price">৳ 2,100</span>
                 <button class="buy-now-btn" onclick="openPayment('GTA V Premium', '৳ 2,100')">BUY NOW</button>
             </div>
-
             <div class="product-card">
-                <div class="badge offer-tag">AVAILABLE</div>
                 <div class="img-box"><img src="forza.png" alt="Forza 5"></div>
                 <h3 style="font-size:20px; min-height:55px;">Forza Horizon 5 Premium</h3>
                 <span class="price">৳ 3,999</span>
