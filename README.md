@@ -10,6 +10,7 @@
             --rrx-red: #ff0000;
             --rrx-glow: rgba(255, 0, 0, 0.6);
             --glass: rgba(255, 255, 255, 0.03);
+            --discord: #5865F2;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Rajdhani', sans-serif; }
@@ -68,7 +69,7 @@
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.98); z-index: 10001; padding: 40px 5%; overflow-y: auto;
         }
-        .payment-container { max-width: 500px; margin: 40px auto; background: #080808; border: 1px solid var(--rrx-red); border-radius: 20px; padding: 30px; text-align: left; box-shadow: 0 0 40px rgba(255, 0, 0, 0.2); }
+        .payment-container { max-width: 500px; margin: 20px auto; background: #080808; border: 1px solid var(--rrx-red); border-radius: 20px; padding: 30px; text-align: left; box-shadow: 0 0 40px rgba(255, 0, 0, 0.2); }
         .method-box { display: flex; gap: 15px; margin: 20px 0; }
         .method { flex: 1; padding: 15px; border: 1px solid #222; border-radius: 10px; text-align: center; }
         .method.active { border-color: var(--rrx-red); background: rgba(255, 0, 0, 0.1); }
@@ -77,6 +78,15 @@
         input:focus { border-color: var(--rrx-red); outline: none; }
         .submit-btn { width: 100%; padding: 18px; background: var(--rrx-red); border: none; color: white; font-family: 'Orbitron'; font-weight: 800; cursor: pointer; border-radius: 8px; box-shadow: 0 0 15px var(--rrx-glow); }
 
+        /* --- Discord Button in Payment --- */
+        .discord-help {
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            margin-top: 20px; padding: 12px; background: rgba(88, 101, 242, 0.1);
+            border: 1px solid var(--discord); color: var(--discord);
+            text-decoration: none; border-radius: 8px; font-weight: bold; transition: 0.3s;
+        }
+        .discord-help:hover { background: var(--discord); color: white; }
+
         /* --- Success Animation --- */
         .success-card { text-align: center; max-width: 500px; margin: 100px auto; animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         @keyframes popIn { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
@@ -84,6 +94,7 @@
 
         footer { text-align: center; padding: 60px; border-top: 1px solid #1a1a1a; color: #555; font-size: 13px; }
         footer span { color: var(--rrx-red); }
+        .footer-discord { color: var(--discord); text-decoration: none; font-weight: bold; margin-top: 10px; display: inline-block; }
     </style>
 </head>
 <body style="overflow: hidden;">
@@ -118,6 +129,11 @@
                 <p style="font-size: 13px; color: #888; margin-bottom: 20px;">* উপরে দেওয়া নম্বরে পেমেন্ট করে TrxID দিন।</p>
                 <button type="submit" class="submit-btn">CONFIRM PAYMENT</button>
             </form>
+
+            <a href="https://discord.gg/vGKpaZdFtt" target="_blank" class="discord-help">
+                Need Help? Join Discord
+            </a>
+            <p style="font-size: 11px; text-align: center; color: #555; margin-top: 10px;">কোনো সমস্যা হলে ডিসকর্ড এ যোগাযোগ করুন।</p>
         </div>
     </div>
 
@@ -130,7 +146,8 @@
                 <span style="color:var(--rrx-red); font-weight:bold; font-size:24px;">২৪ ঘণ্টার মধ্যে</span><br>
                 আপনার ডেলিভারি কমপ্লিট হয়ে যাবে।
             </p>
-            <button class="continue-btn" onclick="location.reload()" style="margin-top:40px;">BACK TO HOME</button>
+            <a href="https://discord.gg/vGKpaZdFtt" target="_blank" class="footer-discord">Contact for Support (Discord)</a><br>
+            <button class="continue-btn" onclick="location.reload()" style="margin-top:30px;">BACK TO HOME</button>
         </div>
     </div>
 
@@ -173,6 +190,7 @@
 
     <footer>
         <p>&copy; 2026 <span>RRX</span> BRAND | POWERED BY <span>RRX STUDIOS</span></p>
+        <a href="https://discord.gg/vGKpaZdFtt" target="_blank" class="footer-discord">JOIN OUR DISCORD SERVER</a>
     </footer>
 
     <script>
