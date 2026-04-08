@@ -126,12 +126,12 @@
 
     <div id="welcome-overlay">
         <div class="welcome-card">
-            <h2>RRX STUDIOS</h2>
+            <h2>RRX CORE</h2>
             <p>
                 আপনার বিশ্বস্ত গেমিং মার্কেটপ্লেস, যেখানে পাবেন জনপ্রিয় গেম, ইন-গেম আইটেম এবং এক্সক্লুসিভ অফার। দ্রুত ডেলিভারি, সিকিউর লেনদেন এবং সহজ পেমেন্ট সুবিধা (বিকাশ ও নগদ) নিয়ে আমরা প্রস্তুত।
             </p>
             <span class="highlight">আপনার বিশ্বাস, আমাদের আমানত।</span>
-            <p style="font-size: 15px; color: var(--rrx-red); letter-spacing: 3px; font-family: 'Orbitron';">YOUR AURA, YOUR RULES 🎮🔥</p>
+            <p style="font-size: 15px; color: var(--rrx-red); letter-spacing: 3px; font-family: 'Orbitron';">YOUR AURA, YOUR RULES </p>
             <button class="continue-btn" onclick="enterSite()">Enter RRX CORE</button>
         </div>
     </div>
