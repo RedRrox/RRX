@@ -170,7 +170,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 <span>RRX</span> BRAND | POWERED BY <span>RRX STUDIOS</span></p>
+        <p>&copy; 2026 <span>RRX</span> CORE | POWERED BY <span>RRX STUDIOS</span></p>
     </footer>
 
     <script>
